@@ -1,5 +1,5 @@
 /* بصمة التوجيه — عامل الخدمة: يحفظ واجهة التطبيق، والبيانات تأتي دائماً من الخادم */
-const V = '47c3e37e1f74', C = 'basma-' + V;
+const V = '0f23178fc1fc', C = 'basma-' + V;
 const SHELL = ['./', 'manifest.webmanifest', 'icons/i192.png', 'icons/i512.png', 'icons/m512.png', 'icons/i180.png'];
 self.addEventListener('install', e => e.waitUntil(caches.open(C).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' }))))));
 self.addEventListener('message', e => { if (e.data === 'skip') self.skipWaiting(); });
